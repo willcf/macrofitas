@@ -3,6 +3,8 @@ from .data_utils.data_loader import image_segmentation_generator, \
     verify_segmentation_dataset
 import glob
 import six
+import matplotlib
+import matplotlib.pyplot as plt
 from keras.callbacks import Callback
 
 
@@ -152,14 +154,24 @@ def train(model,
     callbacks = [
         CheckpointsCallback(checkpoints_path)
     ]
-
+    
     if not validate:
-        model.fit_generator(train_gen, steps_per_epoch,
-                            epochs=epochs, callbacks=callbacks)
+      historyA = model.fit_generator(train_gen, steps_per_epoch,
+          epochs=epochs, callbacks=callbacks)
     else:
-        model.fit_generator(train_gen,
-                            steps_per_epoch,
-                            validation_data=val_gen,
-                            validation_steps=val_steps_per_epoch,
-                            epochs=epochs, callbacks=callbacks,
-                            use_multiprocessing=gen_use_multiprocessing)
+      historyA = model.fit_generator(train_gen,
+        steps_per_epoch,
+        validation_data=val_gen,
+        validation_steps=val_steps_per_epoch,
+        epochs=epochs, callbacks=callbacks,
+        use_multiprocessing=gen_use_multiprocessing)
+    
+    print(historyA.history.keys()) # Displays keys from history, in my case loss,acc
+    plt.figure(figsize=(10, 6))
+    plt.plot(historyA.history['accuracy'], 'o-', label='train accuracy')
+    plt.plot(historyA.history['val_accuracy'], 'o-', label='test accuracy')
+    plt.grid()
+    plt.legend()
+    plt.xlabel('epochs')
+    plt.show()
+    
