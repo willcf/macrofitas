@@ -174,4 +174,12 @@ def train(model,
     plt.legend()
     plt.xlabel('epochs')
     plt.show()
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(historyA.history['loss'], 'o-', label='train loss')
+    plt.plot(historyA.history['val_loss'], 'o-', label='test loss')
+    plt.grid()
+    plt.legend()
+    plt.xlabel('epochs')
+    plt.show()
     
