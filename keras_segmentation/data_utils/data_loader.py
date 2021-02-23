@@ -20,8 +20,49 @@ from .augmentation import augment_seg
 DATA_LOADER_SEED = 0
 
 random.seed(DATA_LOADER_SEED)
-class_colors = [(random.randint(0, 255), random.randint(
-    0, 255), random.randint(0, 255)) for _ in range(5000)]
+#class_colors = [(random.randint(0, 255), random.randint(
+#    0, 255), random.randint(0, 255)) for _ in range(5000)]
+
+class_colors = generate_colors()
+
+def generate_colors():
+    # color names
+    # source: https://datacarpentry.org/image-processing/fig/01-color-table.png
+    red = (255, 0, 0)
+    lime = (0, 255, 0)
+    blue = (0, 0, 255)
+    white = (255, 255, 255)
+    black = (0, 0, 0)
+    gray = (128, 128, 128)
+    fuchsia = (255, 0, 255)
+    yellow = (255, 255, 0)
+    aqua = (0, 255, 255)
+    silver = (192, 192, 192)
+    maroon = (128, 0, 0)
+    olive = (128, 0, 0)
+    green = (0, 128, 0)
+    teal = (0, 128, 128)
+    navy = (0, 0, 128)
+    purple = (128, 0, 128)
+
+    # objects
+    ignore = black
+    background = gray
+    water = aqua
+    macrofita = lime
+    forest = yellow
+    sky = blue    
+    boat = red
+
+    # classes
+    class_colors = [ignore, background, water, macrofita, forest, sky, boat]
+
+    classcolors.extend(
+        [(random.randint(0, 255), 
+        random.randint(0, 255), 
+        random.randint(0, 255)) for  in range(5000)])
+
+    return class_colors
 
 
 class DataLoaderError(Exception):
