@@ -60,7 +60,7 @@ def generate_colors():
     class_colors.extend(
         [(random.randint(0, 255), 
         random.randint(0, 255), 
-        random.randint(0, 255)) for in range(5000)])
+        random.randint(0, 255)) for _ in range(5000)])
 
     return class_colors
 
