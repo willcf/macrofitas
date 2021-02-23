@@ -57,10 +57,10 @@ def generate_colors():
     # classes
     class_colors = [ignore, background, water, macrofita, forest, sky, boat]
 
-    classcolors.extend(
+    class_colors.extend(
         [(random.randint(0, 255), 
         random.randint(0, 255), 
-        random.randint(0, 255)) for  in range(5000)])
+        random.randint(0, 255)) for in range(5000)])
 
     return class_colors
 
