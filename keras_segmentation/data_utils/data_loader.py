@@ -23,8 +23,6 @@ random.seed(DATA_LOADER_SEED)
 #class_colors = [(random.randint(0, 255), random.randint(
 #    0, 255), random.randint(0, 255)) for _ in range(5000)]
 
-class_colors = generate_colors()
-
 def generate_colors():
     # color names
     # source: https://datacarpentry.org/image-processing/fig/01-color-table.png
@@ -64,6 +62,7 @@ def generate_colors():
 
     return class_colors
 
+class_colors = generate_colors()
 
 class DataLoaderError(Exception):
     pass
