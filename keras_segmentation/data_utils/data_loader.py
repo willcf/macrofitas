@@ -53,7 +53,7 @@ def generate_colors():
     boat = red
 
     # classes
-    class_colors = [ignore, background, water, macrofita, forest, sky, boat]
+    class_colors = [background, water, macrofita, forest, sky, boat]
 
     class_colors.extend(
         [(random.randint(0, 255), 
