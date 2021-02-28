@@ -42,7 +42,7 @@ def generate_colors():
     teal = (0, 128, 128)
     navy = (0, 0, 128)
     purple = (128, 0, 128)
-    chocolate = (210, 105, 30)
+    chocolate = (30, 105, 210)
 
     # objects
     ignore = black
