@@ -47,9 +47,9 @@ def generate_colors():
     # objects
     ignore = black
     background = gray
-    water = chocolate
+    water = yellow
     macrofita = lime
-    forest = aqua
+    forest = chocolate
     sky = blue    
     boat = red
 
