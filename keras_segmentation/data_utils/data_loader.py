@@ -42,18 +42,20 @@ def generate_colors():
     teal = (0, 128, 128)
     navy = (0, 0, 128)
     purple = (128, 0, 128)
+    chocolate = (210, 105, 30)
 
     # objects
     ignore = black
     background = gray
-    water = aqua
+    water = chocolate
     macrofita = lime
-    forest = yellow
+    forest = aqua
     sky = blue    
     boat = red
 
     # classes
     class_colors = [background, water, macrofita, forest, sky, boat]
+    #class_colors = [background, macrofita]
 
     class_colors.extend(
         [(random.randint(0, 255), 
