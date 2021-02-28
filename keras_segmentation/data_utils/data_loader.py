@@ -26,9 +26,9 @@ random.seed(DATA_LOADER_SEED)
 def generate_colors():
     # color names
     # source: https://datacarpentry.org/image-processing/fig/01-color-table.png
-    red = (255, 0, 0)
+    red = (0, 0, 255)
     lime = (0, 255, 0)
-    blue = (0, 0, 255)
+    blue = (255, 118, 72)
     white = (255, 255, 255)
     black = (0, 0, 0)
     gray = (128, 128, 128)
